@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="956.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.BuyTicketController">
+    <children>
+        <VBox prefHeight="660.0" prefWidth="194.0">
+            <children>
+                <AnchorPane fx:id="side_ancorPane" prefHeight="644.0" prefWidth="200.0" styleClass="side_ancorPane" stylesheets="@style.css">
+                    <children>
+                        <ImageView fx:id="usersImage" fitHeight="66.0" fitWidth="71.0" layoutX="64.0" layoutY="548.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../../images/profile.png" />
+                            </image>
+                        </ImageView>
+                        <GridPane layoutX="20.0" layoutY="155.0" prefHeight="328.0" prefWidth="163.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Button fx:id="btn_workbench1" mnemonicParsing="false" onAction="#switchToFlights" prefHeight="43.0" prefWidth="163.0" text="Actual Flight" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fx:id="planeImage" fitHeight="42.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../images/airplanes.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <styleClass>
+                                        <String fx:value="btn_workbench11" />
+                                        <String fx:value="cool-button" />
+                                    </styleClass>
+                                </Button>
+                                <Button fx:id="btn_workbench11" mnemonicParsing="false" prefHeight="43.0" prefWidth="163.0" text="Buy Ticket" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fx:id="ticketImage" fitHeight="42.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../images/ticket-flight.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <styleClass>
+                                        <String fx:value="btn_workbench12" />
+                                        <String fx:value="cool-button" />
+                                    </styleClass>
+                                </Button>
+                                <Button fx:id="btn_workbench111" mnemonicParsing="false" onAction="#switchToReview" prefHeight="43.0" prefWidth="163.0" text="Reviews" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="3">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fx:id="chatImage" fitHeight="42.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../images/group.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <styleClass>
+                                        <String fx:value="btn_workbench11" />
+                                        <String fx:value="cool-button" />
+                                    </styleClass>
+                                </Button>
+                                <Button fx:id="btn_workbench" mnemonicParsing="false" onAction="#switchToHome" prefHeight="43.0" prefWidth="163.0" text="Home" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="btn_workbench11" />
+                                        <String fx:value="cool-button" />
+                                    </styleClass>
+                                    <graphic>
+                                        <ImageView fx:id="homeImage" fitHeight="42.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../images/home.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </GridPane>
+                        <Label fx:id="id" layoutX="61.0" layoutY="108.0" prefHeight="23.0" prefWidth="77.0" textFill="WHITE">
+                            <font>
+                                <Font name="Century" size="18.0" />
+                            </font>
+                        </Label>
+                  <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="62.0" layoutY="106.0" size="90" />
+                  <Label fx:id="idLabel" alignment="TOP_CENTER" layoutX="14.0" layoutY="120.0" prefHeight="38.0" prefWidth="169.0" text="nova" textFill="WHITE">
+                     <font>
+                        <Font name="Century" size="30.0" />
+                     </font>
+                  </Label>
+                  <VBox fx:id="user" layoutX="46.0" layoutY="20.0" prefHeight="106.0" prefWidth="98.0" style="-fx-background-color: #353a56;;" styleClass="side_ancorPane">
+                     <children>
+                        <ImageView fx:id="profileImage" fitHeight="100.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+        <Pane prefHeight="536.0" prefWidth="754.0" stylesheets="@style.css">
+            <children>
+            <AnchorPane layoutX="11.0" layoutY="17.0" prefHeight="617.0" prefWidth="730.0">
+               <styleClass>
+                  <String fx:value="shadow" />
+                  <String fx:value="white-bg" />
+                  <String fx:value="radius" />
+                  <String fx:value="mainPane" />
+               </styleClass>
+               <children>
+                  <ComboBox fx:id="destination" layoutX="32.0" layoutY="131.0" prefHeight="43.0" prefWidth="182.0" promptText="Destination" />
+                  <ComboBox fx:id="depart" layoutX="238.0" layoutY="131.0" prefHeight="43.0" prefWidth="194.0" promptText="Departure" />
+                  <ComboBox fx:id="classe" layoutX="236.0" layoutY="200.0" prefHeight="38.0" prefWidth="207.0" promptText="Class" />
+                  <DatePicker fx:id="date" layoutX="32.0" layoutY="200.0" prefHeight="29.0" prefWidth="182.0" promptText="Date" />
+                  <Label layoutX="23.0" layoutY="14.0" prefHeight="48.0" prefWidth="310.0" text="Where would you " textFill="#3b63f2">
+                     <font>
+                        <Font name="Lucida Sans Demibold Italic" size="31.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="51.0" layoutY="62.0" prefHeight="48.0" prefWidth="310.0" text="LIKE TO GO" textFill="#1284db">
+                     <font>
+                        <Font name="Lucida Sans Demibold Italic" size="31.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="flightsTable" layoutX="4.0" layoutY="277.0" prefHeight="272.0" prefWidth="722.0" stylesheets="@style2.css" tableMenuButtonVisible="true">
+                    <columns>
+                      <TableColumn fx:id="idCol" prefWidth="116.80000877380371" text="Numer" />
+                      <TableColumn fx:id="destinationCol" prefWidth="211.199951171875" text="Destination" />
+                        <TableColumn fx:id="departCol" prefWidth="217.59994506835938" text="Departure" />
+                        <TableColumn fx:id="dateCol" prefWidth="176.0" text="Date" />
+                        <TableColumn fx:id="priceCol" prefWidth="176.0" text="Price" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <Separator layoutX="6.0" layoutY="258.0" prefHeight="13.0" prefWidth="712.0" />
+                      <Button fx:id="logoutButton" layoutX="650.0" layoutY="560.0" mnemonicParsing="false" onAction="#onLogOutClick" prefHeight="29.0" prefWidth="29.0" styleClass="cool-button">
+                          <graphic>
+                              <ImageView fx:id="logoutImage" fitHeight="31.0" fitWidth="30.0" onDragDetected="#onLogOutClick" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../../../../../../images/logout.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                      </Button>
+                  <Button fx:id="buy" layoutX="519.0" layoutY="558.0" mnemonicParsing="false" onAction="#buyTicketAction" prefHeight="42.0" prefWidth="115.0" style="-fx-background-radius: 30;" styleClass="btn1" text="Buy Ticket" />
+                  <ImageView fx:id="avionImage" fitHeight="214.0" fitWidth="273.0" layoutX="457.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../images/airplane.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            </children>
+        </Pane>
+    </children>
+</HBox>

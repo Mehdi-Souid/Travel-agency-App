@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="956.0" style="-fx-background-color: #FFF;" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.ActualFlightController">
+    <children>
+        <VBox prefHeight="660.0" prefWidth="194.0">
+            <children>
+                <AnchorPane fx:id="side_ancorPane" prefHeight="644.0" prefWidth="200.0" styleClass="side_ancorPane" stylesheets="@style.css">
+                    <children>
+                        <ImageView fx:id="usersImage" fitHeight="66.0" fitWidth="71.0" layoutX="64.0" layoutY="548.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../../images/profile.png" />
+                            </image>
+                        </ImageView>
+                        <GridPane layoutX="20.0" layoutY="155.0" prefHeight="328.0" prefWidth="163.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Button fx:id="btn_workbench1" mnemonicParsing="false" prefHeight="43.0" prefWidth="163.0" text="Actual Flight" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fx:id="planeImage" fitHeight="42.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../images/airplanes.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                           <styleClass>
+                              <String fx:value="cool-button" />
+                              <String fx:value="btn_workbench12" />
+                           </styleClass>
+                                </Button>
+                                <Button fx:id="btn_workbench11" mnemonicParsing="false" onAction="#switchToTickets" prefHeight="43.0" prefWidth="163.0" text="Buy Ticket" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fx:id="ticketImage" fitHeight="42.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../images/ticket-flight.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                           <styleClass>
+                              <String fx:value="cool-button" />
+                              <String fx:value="btn_workbench11" />
+                           </styleClass>
+                                </Button>
+                                <Button fx:id="btn_workbench111" mnemonicParsing="false" onAction="#switchToReview" prefHeight="43.0" prefWidth="163.0" text="Reviews" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="3">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fx:id="chatImage" fitHeight="42.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../images/group.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <styleClass>
+                                        <String fx:value="btn_workbench11" />
+                                        <String fx:value="cool-button" />
+                                    </styleClass>
+                                </Button>
+                                <Button fx:id="btn_workbench" mnemonicParsing="false" onAction="#switchToHome" prefHeight="43.0" prefWidth="163.0" text="Home" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="btn_workbench11" />
+                                        <String fx:value="cool-button" />
+                                    </styleClass>
+                                    <graphic>
+                                        <ImageView fx:id="homeImage" fitHeight="42.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../images/home.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </GridPane>
+                        <Label fx:id="id" layoutX="61.0" layoutY="108.0" prefHeight="23.0" prefWidth="77.0" textFill="WHITE">
+                            <font>
+                                <Font name="Century" size="18.0" />
+                            </font>
+                        </Label>
+                        <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="62.0" layoutY="106.0" size="90" />
+                        <Label fx:id="idLabel" alignment="TOP_CENTER" layoutX="5.0" layoutY="120.0" prefHeight="38.0" prefWidth="178.0" text="nova" textFill="WHITE">
+                            <font>
+                                <Font name="Century" size="30.0" />
+                            </font>
+                        </Label>
+                  <VBox fx:id="user" layoutX="45.0" layoutY="17.0" prefHeight="106.0" prefWidth="98.0" style="-fx-background-color: #353a56;;" styleClass="side_ancorPane">
+                     <children>
+                        <ImageView fx:id="profileImage" fitHeight="100.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+        <Pane prefHeight="536.0" prefWidth="754.0" style="-fx-background-color: #FFF;" stylesheets="@style.css">
+         <children>
+                  <Button fx:id="logoutButton" layoutX="702.0" layoutY="597.0" mnemonicParsing="false" onAction="#onLogOutClick" prefHeight="29.0" prefWidth="29.0" styleClass="cool-button">
+                      <graphic>
+                          <ImageView fx:id="logoutImage" fitHeight="31.0" fitWidth="30.0" onDragDetected="#onLogOutClick" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="@../../../../../../images/logout.png" />
+                              </image>
+                          </ImageView>
+                      </graphic>
+                  </Button>
+            <AnchorPane layoutX="24.0" layoutY="28.0" prefHeight="262.0" prefWidth="715.0" style="-fx-background-radius: 30;">
+               <styleClass>
+                  <String fx:value="shadow" />
+                  <String fx:value="white-bg" />
+                  <String fx:value="mainPane" />
+               </styleClass>
+               <children>
+                  <AnchorPane layoutY="-22.0" prefHeight="98.0" prefWidth="715.0" style="-fx-background-radius: 30; -fx-background-color: #0087FC;">
+                     <children>
+                        <Label layoutX="38.0" layoutY="4.0" text="NAME OF PASSENGER" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="192.0" layoutY="4.0" text="DATE" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="342.0" layoutY="5.0" text="FLIGHT" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="427.0" layoutY="4.0" text="TICKET" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="name" layoutX="48.0" layoutY="23.0" text="MEHDI SOUID" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="datefilght" layoutX="205.0" layoutY="23.0" text="24 APL 2024" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="N_flight" layoutX="344.0" layoutY="23.0" text="FL009A" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="id_ticket" layoutX="426.0" layoutY="23.0" text="NOVAFL009A" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIcon fill="WHITE" glyphName="PLANE" layoutX="622.0" layoutY="49.0" size="50" />
+                        <Arc fill="WHITE" layoutX="566.0" layoutY="-1.0" length="180.0" radiusX="6.0" radiusY="8.0" startAngle="181.0" stroke="WHITE" strokeType="INSIDE" type="ROUND" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="35.0" prefHeight="182.0" prefWidth="715.0" styleClass="white-bg">
+                     <children>
+                        <ImageView fx:id="worldImage" fitHeight="201.0" fitWidth="443.0" layoutX="133.0" layoutY="5.0" opacity="0.36" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../images/World.png" />
+                           </image>
+                        </ImageView>
+                        <FontAwesomeIcon glyphName="PLANE" layoutX="228.0" layoutY="121.0" rotate="45.0" size="100" />
+                        <Label fx:id="depart_ticket" alignment="TOP_CENTER" layoutX="16.0" layoutY="59.0" text="PARIS">
+                           <font>
+                              <Font name="Arial" size="37.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="destination_ticket" alignment="TOP_CENTER" layoutX="354.0" layoutY="56.0" text="TUNIS" textFill="#0087fc">
+                           <font>
+                              <Font name="Arial" size="37.0" />
+                           </font>
+                        </Label>
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="29.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="53.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="76.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="100.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="124.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="7.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="-15.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="-34.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="149.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="170.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="190.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Label layoutX="243.0" layoutY="138.0" text="CLASSE" textFill="#0087fc">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="581.0" layoutY="6.0" text="NAME OF PASSENGER">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="name2" layoutX="575.0" layoutY="26.0" text="MEHDI SOUID">
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="581.0" layoutY="60.0" text="DATE">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="date2" layoutX="578.0" layoutY="85.0" text="24 APL 2024">
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="578.0" layoutY="122.0" text="FLIGHT">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flightid2" layoutX="578.0" layoutY="145.0" text="FL009A">
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="577.0" layoutY="179.0" text="TICKET">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="depart_ticket2" alignment="TOP_CENTER" layoutX="663.0" layoutY="158.0" rotate="270.0" text="Houston">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIcon glyphName="PLANE" layoutX="677.0" layoutY="124.0" rotate="-42.1" size="20" />
+                        <Label fx:id="destination_ticket2" alignment="TOP_CENTER" layoutX="658.0" layoutY="49.0" rotate="270.0" text="MIA Airport" textFill="#0087fc">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="35.0" layoutY="153.0" text="GATE" textFill="#797979">
+                           <font>
+                              <Font name="Agency FB" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="classe" alignment="TOP_CENTER" layoutX="252.0" layoutY="174.0" text="classe">
+                           <font>
+                              <Font name="Agency FB" size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Circle fill="WHITE" layoutX="566.0" layoutY="244.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                  <Label fx:id="gate" layoutX="43.0" layoutY="225.0" text="9A">
+                     <font>
+                        <Font name="Agency FB" size="25.0" />
+                     </font>
+                  </Label>
+                  <Arc fill="WHITE" layoutX="566.0" layoutY="263.0" length="180.0" radiusX="6.0" radiusY="8.0" stroke="#919191" strokeType="INSIDE" type="ROUND" />
+                  <Label fx:id="ticketid2" layoutX="577.0" layoutY="233.0" text="NOVAFL009A">
+                     <font>
+                        <Font name="Agency FB Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="19.0" layoutY="328.0" prefHeight="262.0" prefWidth="715.0" style="-fx-background-radius: 30;">
+               <styleClass>
+                  <String fx:value="shadow" />
+                  <String fx:value="white-bg" />
+                  <String fx:value="mainPane" />
+               </styleClass>
+               <children>
+                  <AnchorPane layoutY="-22.0" prefHeight="98.0" prefWidth="715.0" style="-fx-background-radius: 30; -fx-background-color: #0087FC;">
+                     <children>
+                        <Label layoutX="40.0" layoutY="4.0" text="NAME OF PASSENGER" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="209.0" layoutY="4.0" text="DATE" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="342.0" layoutY="5.0" text="FLIGHT" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="427.0" layoutY="4.0" text="TICKET" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="name3" layoutX="53.0" layoutY="23.0" text="MEHDI SOUID" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="date3" layoutX="221.0" layoutY="23.0" text="24 APL 2024" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flightid3" layoutX="348.0" layoutY="23.0" text="FL009A" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="ticketid3" layoutX="426.0" layoutY="23.0" text="NOVAFL009A" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Arc fill="WHITE" layoutX="566.0" layoutY="-1.0" length="180.0" radiusX="6.0" radiusY="8.0" startAngle="181.0" stroke="WHITE" strokeType="INSIDE" type="ROUND" />
+                        <Label layoutX="581.0" layoutY="21.0" text="BOARDING PASS" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="35.0" prefHeight="182.0" prefWidth="715.0" styleClass="white-bg">
+                     <children>
+                        <ImageView fx:id="world2Image" fitHeight="201.0" fitWidth="443.0" layoutX="133.0" layoutY="5.0" opacity="0.34" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../images/World.png" />
+                           </image>
+                        </ImageView>
+                        <FontAwesomeIcon glyphName="PLANE" layoutX="221.0" layoutY="118.0" rotate="45.0" size="100" />
+                        <Label fx:id="depart_ticket3" alignment="TOP_CENTER" layoutX="14.0" layoutY="57.0" text="PARIS">
+                           <font>
+                              <Font name="Arial" size="37.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="destination_ticket3" alignment="TOP_CENTER" layoutX="336.0" layoutY="57.0" text="TUNIS" textFill="#0087fc">
+                           <font>
+                              <Font name="Arial" size="37.0" />
+                           </font>
+                        </Label>
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="29.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="53.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="76.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="100.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="124.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="7.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="-15.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="-34.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="146.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="168.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Circle fill="WHITE" layoutX="566.0" layoutY="188.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                        <Label layoutX="581.0" layoutY="6.0" text="NAME OF PASSENGER">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="name4" layoutX="580.0" layoutY="26.0" text="MEHDI SOUID">
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="581.0" layoutY="67.0" text="DATE">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="date4" layoutX="580.0" layoutY="92.0" text="24 APL 2024">
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="577.0" layoutY="123.0" text="FLIGHT">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="flighid4" layoutX="575.0" layoutY="143.0" text="FL009A">
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="577.0" layoutY="179.0" text="TICKET">
+                           <font>
+                              <Font name="Agency FB" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="depart_ticket4" alignment="TOP_CENTER" layoutX="665.0" layoutY="161.0" rotate="270.0" text="Houston">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIcon glyphName="PLANE" layoutX="679.0" layoutY="127.0" rotate="-42.1" size="20" />
+                        <Label fx:id="destination_ticket4" layoutX="660.0" layoutY="54.0" rotate="270.0" text="MIA Airport" textFill="#0087fc">
+                           <font>
+                              <Font name="Arial" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="54.0" layoutY="160.0" text="GATE" textFill="#797979">
+                           <font>
+                              <Font name="Agency FB" size="23.0" />
+                           </font>
+                        </Label>
+                        <Text layoutX="105.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thank you for choosing Tiiir Flayen Airlane">
+                           <font>
+                              <Font name="Century Schoolbook Bold" size="19.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <Circle fill="WHITE" layoutX="566.0" layoutY="242.0" radius="6.0" stroke="#919191" strokeType="INSIDE" />
+                  <Label fx:id="gate2" layoutX="64.0" layoutY="227.0" text="9A">
+                     <font>
+                        <Font name="Agency FB" size="25.0" />
+                     </font>
+                  </Label>
+                  <Arc fill="WHITE" layoutX="566.0" layoutY="262.0" length="180.0" radiusX="6.0" radiusY="8.0" stroke="#919191" strokeType="INSIDE" type="ROUND" />
+                  <Label fx:id="ticketid4" layoutX="575.0" layoutY="233.0" text="NOVAFL009A">
+                     <font>
+                        <Font name="Agency FB Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+        </Pane>
+    </children>
+</HBox>
